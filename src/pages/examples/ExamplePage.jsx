@@ -7,11 +7,14 @@ import InteractiveFlow from "./InteractiveFlow"
 import DagreLayout from "./DagreLayout"
 import NodePositionAnimation from "./NodePositionAnimation"
 import HelperLines from "./HelperLines"
+import AutoLayout from "./AutoLayout"
+import CopyPaste from "./CopyPaste"
 import CodeViewer from "../../components/CodeViewer"
 import { transform } from "@babel/standalone"
 import * as React from "react"
 import * as ReactFlow from "@xyflow/react"
 import dagre from "dagre"
+import { timer } from "d3-timer"
 
 const componentMap = {
   BasicNodes,
@@ -20,6 +23,8 @@ const componentMap = {
   DagreLayout,
   NodePositionAnimation,
   HelperLines,
+  AutoLayout,
+  CopyPaste,
 }
 
 function ExamplePage() {
@@ -186,6 +191,7 @@ function ExamplePage() {
         "react-dom": { default: null }, // 通常不需要
         "@xyflow/react": ReactFlow,
         dagre: dagre,
+        "d3-timer": { timer },
       }
 
       // 创建 require 函数
