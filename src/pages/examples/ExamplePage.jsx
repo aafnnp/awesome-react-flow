@@ -5,6 +5,7 @@ import BasicNodes from "./BasicNodes"
 import CustomNodes from "./CustomNodes"
 import InteractiveFlow from "./InteractiveFlow"
 import DagreLayout from "./DagreLayout"
+import NodePositionAnimation from "./NodePositionAnimation"
 import CodeViewer from "../../components/CodeViewer"
 import { transform } from "@babel/standalone"
 import * as React from "react"
@@ -16,6 +17,7 @@ const componentMap = {
   CustomNodes,
   InteractiveFlow,
   DagreLayout,
+  NodePositionAnimation,
 }
 
 function ExamplePage() {
