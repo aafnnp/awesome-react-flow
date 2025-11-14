@@ -29,4 +29,10 @@ export const examples = [
     description: "在不同布局之间切换时，节点会平滑地移动到新位置",
     component: "NodePositionAnimation",
   },
+  {
+    slug: "helper-lines",
+    title: "辅助对齐线",
+    description: "在拖拽节点时显示辅助对齐线，帮助节点对齐",
+    component: "HelperLines",
+  },
 ]
