@@ -47,4 +47,10 @@ export const examples = [
     description: "使用键盘快捷键复制和粘贴选中的节点和边，保持节点之间的连接关系",
     component: "CopyPaste",
   },
+  {
+    slug: "dynamic-layout",
+    title: "动态布局",
+    description: "根据节点数量和布局方向自动计算节点位置",
+    component: "DynamicLayout",
+  },
 ]

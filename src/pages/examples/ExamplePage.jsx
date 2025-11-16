@@ -9,6 +9,7 @@ import NodePositionAnimation from "./NodePositionAnimation"
 import HelperLines from "./HelperLines"
 import AutoLayout from "./AutoLayout"
 import CopyPaste from "./CopyPaste"
+import DynamicLayout from "./DynamicLayout"
 import CodeViewer from "../../components/CodeViewer"
 import { transform } from "@babel/standalone"
 import * as React from "react"
@@ -25,6 +26,7 @@ const componentMap = {
   HelperLines,
   AutoLayout,
   CopyPaste,
+  DynamicLayout,
 }
 
 function ExamplePage() {
