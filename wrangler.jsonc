@@ -4,8 +4,10 @@
   "assets": {
     "directory": "./dist"
   },
-  "route": {
-    "pattern": "flow.manon.icu/*",
-    "zone_name": "manon.icu"
-  }
+  "routes": [
+    {
+      "pattern": "flow.manon.icu/*",
+      "zone_name": "manon.icu"
+    }
+  ]
 }
