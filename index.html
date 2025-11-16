@@ -1,13 +1,189 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>react-flow-app</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/vite.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- Primary Meta Tags -->
+    <title>React Flow 案例集合 - 探索流程图和节点图的实现方案</title>
+    <meta
+      name="title"
+      content="React Flow 案例集合 - 探索流程图和节点图的实现方案"
+    />
+    <meta
+      name="description"
+      content="React Flow 案例集合网站，展示各种流程图、节点图的实现方案，包括基础节点、自定义节点、交互式流程图、自动布局、节点动画等功能演示。"
+    />
+    <meta
+      name="keywords"
+      content="React Flow, 流程图, 节点图, 数据可视化, React, 前端开发, 交互式图表, Dagre布局, 自动布局"
+    />
+    <meta
+      name="author"
+      content="React Flow App"
+    />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+    <meta
+      name="language"
+      content="Chinese"
+    />
+    <meta
+      name="revisit-after"
+      content="7 days"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content="https://flow.manon.icu/"
+    />
+    <meta
+      property="og:title"
+      content="React Flow 案例集合 - 探索流程图和节点图的实现方案"
+    />
+    <meta
+      property="og:description"
+      content="React Flow 案例集合网站，展示各种流程图、节点图的实现方案，包括基础节点、自定义节点、交互式流程图、自动布局、节点动画等功能演示。"
+    />
+    <meta
+      property="og:image"
+      content="https://flow.manon.icu/og-image.jpg"
+    />
+    <meta
+      property="og:locale"
+      content="zh_CN"
+    />
+    <meta
+      property="og:site_name"
+      content="React Flow 案例集合"
+    />
+
+    <!-- Twitter -->
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content="https://flow.manon.icu/"
+    />
+    <meta
+      property="twitter:title"
+      content="React Flow 案例集合 - 探索流程图和节点图的实现方案"
+    />
+    <meta
+      property="twitter:description"
+      content="React Flow 案例集合网站，展示各种流程图、节点图的实现方案，包括基础节点、自定义节点、交互式流程图、自动布局、节点动画等功能演示。"
+    />
+    <meta
+      property="twitter:image"
+      content="https://flow.manon.icu/og-image.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://flow.manon.icu/"
+    />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "React Flow 案例集合",
+        "description": "React Flow 案例集合网站，展示各种流程图、节点图的实现方案",
+        "url": "https://flow.manon.icu/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://flow.manon.icu/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "React Flow 案例集合",
+        "description": "展示各种 React Flow 使用场景和功能演示的案例集合",
+        "url": "https://flow.manon.icu/",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "基础节点",
+              "url": "https://flow.manon.icu/examples/basic-nodes"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "自定义节点",
+              "url": "https://flow.manon.icu/examples/custom-nodes"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "交互式流程图",
+              "url": "https://flow.manon.icu/examples/interactive-flow"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "自动布局",
+              "url": "https://flow.manon.icu/examples/dagre-layout"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "节点位置动画",
+              "url": "https://flow.manon.icu/examples/node-position-animation"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "辅助对齐线",
+              "url": "https://flow.manon.icu/examples/helper-lines"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "复制粘贴",
+              "url": "https://flow.manon.icu/examples/copy-paste"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "动态布局",
+              "url": "https://flow.manon.icu/examples/dynamic-layout"
+            }
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
   </body>
 </html>

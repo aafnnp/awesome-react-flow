@@ -1,0 +1,17 @@
+# robots.txt for React Flow App
+
+# 允许所有搜索引擎爬取
+User-agent: *
+Allow: /
+
+# 禁止爬取构建产物和开发文件
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /src/
+
+# Sitemap 位置
+Sitemap: https://flow.manon.icu/sitemap.xml
+
+# 爬取延迟（可选，单位：秒）
+Crawl-delay: 1
+

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from "react"
 import { useParams, Navigate } from "react-router-dom"
 import { examples } from "../../data/examples"
+import SEO from "../../components/SEO"
 import BasicNodes from "./BasicNodes"
 import CustomNodes from "./CustomNodes"
 import InteractiveFlow from "./InteractiveFlow"
@@ -251,71 +252,79 @@ function ExamplePage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="space-y-8">
-        <div className="space-y-2">
-          <h1 className="text-4xl font-bold text-foreground">{example.title}</h1>
-          <p className="text-muted-foreground">{example.description}</p>
-        </div>
-
-        <div className="min-h-[600px] h-[calc(100vh-280px)] flex flex-col border border-border rounded-lg overflow-hidden">
-          {/* 控制按钮 */}
-          <div className="flex-shrink-0 px-4 py-2 border-b border-border bg-card flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setShowCode(!showCode)}
-                className="px-3 py-1 text-sm bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
-              >
-                {showCode ? "隐藏代码" : "查看代码"}
-              </button>
-            </div>
+    <>
+      <SEO
+        title={`${example.title} - React Flow 案例集合`}
+        description={example.description}
+        keywords={`React Flow, ${example.title}, 流程图, 节点图, 数据可视化`}
+        url={`https://flow.manon.icu/examples/${example.slug}`}
+      />
+      <div className="container mx-auto px-4 py-8">
+        <div className="space-y-8">
+          <div className="space-y-2">
+            <h1 className="text-4xl font-bold text-foreground">{example.title}</h1>
+            <p className="text-muted-foreground">{example.description}</p>
           </div>
 
-          {/* 内容区域 - 左右布局 */}
-          <div
-            ref={containerRef}
-            className="flex-1 overflow-hidden flex relative"
-          >
-            {showCode && code && (
-              <>
-                <div
-                  className="flex-shrink-0 border-r border-border"
-                  style={{ width: `${codeWidth}%` }}
+          <div className="min-h-[600px] h-[calc(100vh-280px)] flex flex-col border border-border rounded-lg overflow-hidden">
+            {/* 控制按钮 */}
+            <div className="flex-shrink-0 px-4 py-2 border-b border-border bg-card flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setShowCode(!showCode)}
+                  className="px-3 py-1 text-sm bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
                 >
-                  <CodeViewer
-                    code={editedCode || code}
-                    language="tsx"
-                    onCodeChange={setEditedCode}
-                  />
-                </div>
-                {/* 可拖拽的分隔条 */}
-                <div
-                  className="w-1 bg-border hover:bg-primary cursor-col-resize flex-shrink-0 transition-colors group"
-                  onMouseDown={(e) => {
-                    e.preventDefault()
-                    isResizing.current = true
-                  }}
-                >
-                  <div className="w-full h-full group-hover:bg-primary/50 transition-colors" />
-                </div>
-              </>
-            )}
+                  {showCode ? "隐藏代码" : "查看代码"}
+                </button>
+              </div>
+            </div>
+
+            {/* 内容区域 - 左右布局 */}
             <div
-              className="flex-1 overflow-hidden relative"
-              style={showCode ? { width: `${100 - codeWidth}%` } : { width: "100%" }}
+              ref={containerRef}
+              className="flex-1 overflow-hidden flex relative"
             >
-              {previewError && (
-                <div className="absolute top-2 left-2 right-2 bg-red-500 text-white p-3 rounded text-sm z-10">
-                  <div className="font-semibold mb-1">预览错误:</div>
-                  <div className="font-mono text-xs">{previewError}</div>
-                </div>
+              {showCode && code && (
+                <>
+                  <div
+                    className="flex-shrink-0 border-r border-border"
+                    style={{ width: `${codeWidth}%` }}
+                  >
+                    <CodeViewer
+                      code={editedCode || code}
+                      language="tsx"
+                      onCodeChange={setEditedCode}
+                    />
+                  </div>
+                  {/* 可拖拽的分隔条 */}
+                  <div
+                    className="w-1 bg-border hover:bg-primary cursor-col-resize flex-shrink-0 transition-colors group"
+                    onMouseDown={(e) => {
+                      e.preventDefault()
+                      isResizing.current = true
+                    }}
+                  >
+                    <div className="w-full h-full group-hover:bg-primary/50 transition-colors" />
+                  </div>
+                </>
               )}
-              <DynamicComponent />
+              <div
+                className="flex-1 overflow-hidden relative"
+                style={showCode ? { width: `${100 - codeWidth}%` } : { width: "100%" }}
+              >
+                {previewError && (
+                  <div className="absolute top-2 left-2 right-2 bg-red-500 text-white p-3 rounded text-sm z-10">
+                    <div className="font-semibold mb-1">预览错误:</div>
+                    <div className="font-mono text-xs">{previewError}</div>
+                  </div>
+                )}
+                <DynamicComponent />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
