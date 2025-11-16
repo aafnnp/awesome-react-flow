@@ -4,10 +4,8 @@
   "assets": {
     "directory": "./dist"
   },
-  "routes": [
-    {
-      "pattern": "**",
-      "zone_name": "react-flow-app.manon.icu"
-    }
-  ]
+  "routes": {
+    "pattern": "flow.manon.icu/*",
+    "zone_name": "manon.icu"
+  }
 }
